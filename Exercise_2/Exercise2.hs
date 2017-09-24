@@ -2,7 +2,7 @@
 
 -- |
 -- Module      : Exercise2
--- Description : Assignment 2 of the Advanced Programming Course
+-- Description : Generics by Overloading
 -- Copyright   : (c) Tom Westerhout, 2017
 -- License     : MIT
 
@@ -72,7 +72,6 @@ type BinG a = EITHER (CONS UNIT)
 type ListG a = EITHER (CONS UNIT)
                       (CONS (PAIR a [a]))
 
-
 -- $answers
 -- 1) We have three implementations of @(==)@ for 'UNIT'. All three give
 -- the same results because 'UNIT' only has one state. As for the code, I
@@ -85,7 +84,6 @@ type ListG a = EITHER (CONS UNIT)
 -- 3) Generic representations of both @Leaf@ and @[]@ is 'UNIT'. @Leaf ==
 -- []@ gives compile-time error :) No matter how you define it. Type of
 -- @(==)@ is @a → a@, so comparing 'Bin' with 'List' is illformed.
-
 
 
 -- $design-problem
@@ -138,7 +136,6 @@ type ListG a = EITHER (CONS UNIT)
 -- With these modifications we can now implement everything :)
 --
 -- /P.S./ I think this also answers the \"Reflection\" questions.
-
 
 
 -- | Converts a list to its generic representation. This function is
